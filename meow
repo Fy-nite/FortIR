@@ -1,0 +1,54 @@
+module Programs version 1.0.0
+// Programs class
+class Program {
+    method Main() -> void {
+        call Programs.Program.square() -> void
+        ret
+    }
+
+    method square() -> void {
+        local x: int32
+        local __print_buffer: System.string
+        local __print_temp: System.string
+
+        ldc.i4 5
+        stloc x
+        ldstr "The square of "
+        stloc __print_buffer
+        ldloc __print_buffer
+        ldstr " "
+        call System.string.Concat(System.string, System.string) -> System.string
+        stloc __print_buffer
+        ldloc x
+        call System.Convert.ToString(int32) -> System.string
+        stloc __print_temp
+        ldloc __print_buffer
+        ldloc __print_temp
+        call System.string.Concat(System.string, System.string) -> System.string
+        stloc __print_buffer
+        ldloc __print_buffer
+        ldstr " "
+        call System.string.Concat(System.string, System.string) -> System.string
+        stloc __print_buffer
+        ldstr " is "
+        stloc __print_temp
+        ldloc __print_buffer
+        ldloc __print_temp
+        call System.string.Concat(System.string, System.string) -> System.string
+        stloc __print_buffer
+        ldloc __print_buffer
+        ldstr " "
+        call System.string.Concat(System.string, System.string) -> System.string
+        stloc __print_buffer
+        ldc.i4 50
+        call System.Convert.ToString(int32) -> System.string
+        stloc __print_temp
+        ldloc __print_buffer
+        ldloc __print_temp
+        call System.string.Concat(System.string, System.string) -> System.string
+        stloc __print_buffer
+        ldloc __print_buffer
+        call System.Console.WriteLine(System.string) -> void
+        ret
+    }
+}

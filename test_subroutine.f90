@@ -1,8 +1,11 @@
-program test_subroutine
+program Programs
     implicit none
-    call OCRuntime
-end program test_subroutine
+    call square()
+end program Programs
 
-subroutine greet()
-    print *, "Hello from subroutine!"
-end subroutine greet
+subroutine square()
+    integer :: x
+    x = 5
+    print *, "The square of ", x, " is ", 50
+end subroutine square
+
